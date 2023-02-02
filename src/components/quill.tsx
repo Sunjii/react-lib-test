@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import ReactQuill, { Value } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { createPost } from "../api/apis";
 
 const Board = () => {
   const [value, setValue] = useState("");
@@ -29,7 +30,7 @@ const Board = () => {
 
         // URL로 가져오는 방법임..
         // blob 사용?
-        console.log("성공 시, 백엔드가 보내주는 데이터", result.data.file_url);
+        console.log("성공::: ", result.data.file_url);
         const IMG_URL = result.data.file_url;
         console.log(result.data);
 
@@ -40,7 +41,7 @@ const Board = () => {
         // 가져온 위치에 이미지를 삽입한다
         editor.insertEmbed(range.index, "image", IMG_URL);
       } catch (error) {
-        console.log("실패했어요ㅠ");
+        console.log("실패");
       }
     });
   };
@@ -48,8 +49,8 @@ const Board = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    console.log(value);
-    console.log(value);
+    console.log(value.replace(/"/g, '\\"'));
+    createPost({ title: "title", content: value });
   };
 
   const moduleOption = useMemo(() => {
