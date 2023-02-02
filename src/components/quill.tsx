@@ -4,7 +4,7 @@ import ReactQuill, { Value } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { createPost } from "../api/apis";
 
-const Board = () => {
+const Write = () => {
   const [value, setValue] = useState("");
   const quillRef = useRef<any>();
 
@@ -133,4 +133,4 @@ const Board = () => {
   );
 };
 
-export default Board;
+export default Write;
