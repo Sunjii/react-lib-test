@@ -3,6 +3,7 @@ import { Badge, Button } from "react-bootstrap";
 import AccordionExample from "../components/bootstrap/accordion";
 import AlertExample from "../components/bootstrap/alert";
 import ButtonExample from "../components/bootstrap/button";
+import CarouselExample from "../components/bootstrap/carousel";
 import NavbarExample from "../components/bootstrap/navbar";
 
 const Home = () => {
@@ -11,6 +12,9 @@ const Home = () => {
       <div>
         <NavbarExample />
         <br />
+      </div>
+      <div>
+        <CarouselExample />
       </div>
       <div>
         <ButtonExample />

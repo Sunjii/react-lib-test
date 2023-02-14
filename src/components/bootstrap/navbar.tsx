@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
+import CarouselExample from "./carousel";
 
 const NavbarExample = () => {
   const [activeTab, setActiveTab] = useState("");
@@ -13,12 +14,12 @@ const NavbarExample = () => {
         </Nav.Item>
         <Nav.Item>
           <Nav.Link
-            eventKey="link-1"
+            eventKey="link-car"
             onClick={() => {
-              setActiveTab("link-1");
+              setActiveTab("link-car");
             }}
           >
-            Loooonger NavLink
+            Carousel Example!
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
@@ -53,12 +54,13 @@ const NavbarExample = () => {
           <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      {activeTab === "link-1" ? (
-        <div>This is Link 1 Tab</div>
+      {activeTab === "link-car" ? (
+        // <CarouselExample />
+        <p>Hello this is Tab 1</p>
       ) : activeTab === "link-2" ? (
         <div>This is Link 2 Tab</div>
       ) : (
-        "Home"
+        ""
       )}
     </>
   );
